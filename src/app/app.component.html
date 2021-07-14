@@ -3,7 +3,7 @@
   <div class="shopping-cart">Shopping cart</div>
 </header>
 
-<div class="refresh-button"><img src="https://img.icons8.com/ios-glyphs/60/000000/refresh--v1.png"/></div>
+<div class="refresh-button" (click)="refreshBooks()"><img src="https://img.icons8.com/ios-glyphs/60/000000/refresh--v1.png"/></div>
 <div class="container">
   <div *ngFor="let book of books" class="book-for-sale" style="background-image: url(assets/images/{{book.coverPath}});">
       <div class="card-content">
@@ -11,7 +11,7 @@
           <p class="card-body">By {{ book.author }},
           release {{ book.releaseDate }}, ISBN {{ book.isbn }}
           </p>
-          <p><a href="#" class="button">Add to cart</a><span class="price">{{ book.availableAmount }}/{{ book.price }}rub</span></p>
+          <p><a href="#" class="button" (click)="addToCart(book.name)">Add to cart</a><span class="price">{{ book.availableAmount }}/{{ book.price }}rub</span></p>
       </div>
   </div>  
 </div>
