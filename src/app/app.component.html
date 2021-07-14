@@ -5,13 +5,13 @@
 
 <div class="refresh-button"><img src="https://img.icons8.com/ios-glyphs/60/000000/refresh--v1.png"/></div>
 <div class="container">
-  <div class="book-for-sale">
+  <div *ngFor="let book of books" class="book-for-sale" style="background-image: url(assets/images/{{book.coverPath}});">
       <div class="card-content">
-          <h2 class="card-title">BookName</h2>
-          <p class="card-body">Here will be author name,
-          ISBN book code, date it was made etc
+          <h2 class="card-title">{{ book.name }}</h2>
+          <p class="card-body">By {{ book.author }},
+          release {{ book.releaseDate }}, ISBN {{ book.isbn }}
           </p>
-          <p><a href="#" class="button">Add to cart</a><span class="price">9999</span></p>
+          <p><a href="#" class="button">Add to cart</a><span class="price">{{ book.availableAmount }}/{{ book.price }}rub</span></p>
       </div>
   </div>  
 </div>
