@@ -1,16 +1,16 @@
-# BookStore интернет-магазин книг
+# BookStore - online book store
 
 ---
 
-**Выполнил студент**: Яцкевич Д.В.
+**Student**: Яцкевич Д.В.
 
 ---
 
-Angular CLI needed to run project
+Angular CLI needed to run project. So consider running `npm install -g @angular/cli`, then navigate to the main dir `cd BookStore`
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Now you can launch a dev server, run `ng serve`. After that you can find your app on `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Build
 
