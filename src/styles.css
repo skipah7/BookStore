@@ -33,7 +33,7 @@ body::-webkit-scrollbar-thumb {
 
 header {
   background-color: #727573;
-  background-image: url(../images/header.jpg);
+  background-image: url(assets/images/header.jpg);
   background-blend-mode: multiply;
   background-size: cover;
   background-position: center;
@@ -68,6 +68,7 @@ header {
 
 .refresh-button {
     position: fixed;
+    cursor: pointer;
     bottom: 20px;
     right: 20px;
     background-color: #0F9;
@@ -80,6 +81,10 @@ header {
 
 .refresh-button:hover {
     transform: scale(1.05)
+}
+
+.price {
+    margin-left: 3rem;
 }
 
 .container {
@@ -96,7 +101,7 @@ header {
 
 .book-for-sale {
     color: var(--clr-neutral-100);
-    background-image: url(../images/psychopath-test.jpg);
+    background-image: url(assets/images/psychopath-test.jpg);
     background-size: cover;
     background-position: center;
     padding: 10rem 0 0;
