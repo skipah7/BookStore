@@ -101,7 +101,6 @@ header {
 
 .book-for-sale {
     color: var(--clr-neutral-100);
-    background-image: url(assets/images/psychopath-test.jpg);
     background-size: cover;
     background-position: center;
     padding: 10rem 0 0;
