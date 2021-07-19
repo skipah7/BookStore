@@ -6,7 +6,7 @@ export const books = [
       isbn: '978-1594485756',
       coverPath: 'psychopath-test.jpg',
       availableAmount: 5,
-      price: 2754
+      price: 754
     },
     {
       name: 'Dead Astronauts',
@@ -14,8 +14,8 @@ export const books = [
       releaseDate: '03.12.2019', 
       isbn: '978-0374276805',
       coverPath: 'dead-astronauts.jpg',
-      availableAmount: 3,
-      price: 5325
+      availableAmount: 1,
+      price: 325
     },
     {
       name: 'The Everlasting',
@@ -24,7 +24,7 @@ export const books = [
       isbn: '978-0062873644',
       coverPath: 'The-Everlasting.jpg',
       availableAmount: 6,
-      price: 9638
+      price: 638
     },
     {
       name: 'Witches of America',
@@ -33,6 +33,6 @@ export const books = [
       isbn: '037-4291373',
       coverPath: 'witches-of-america.jpg',
       availableAmount: 1,
-      price: 1728
+      price: 728
     }
   ]
