@@ -12,7 +12,7 @@ export class AppComponent {
   books = books
   cartState: boolean = false   
   cancelButton: boolean = false
-  cart: any = {}
+  public cart: any = {}
   price: number = 0
 
   addToCart(book: any) {
@@ -42,7 +42,8 @@ export class AppComponent {
   }
 
   removeFromCart(bookName: any) {
-    if (--this.cart[bookName] == 0) {
+    this.cart[bookName]--
+    if (this.cart[bookName] <= 0) {
       delete this.cart[bookName]
     }
     console.log(this.cart)
@@ -77,7 +78,9 @@ export class AppComponent {
 
   cancelOrder() {
     for (const cartOrder in this.cart) {
-      for (let i = 0; i <= this.cart[cartOrder] + 1; i++) {
+      const count = this.cart[cartOrder]
+
+      for (let i: number = 0; i < count; i++) {
         this.removeFromCart(cartOrder)
       }
 
