@@ -7,13 +7,16 @@ import { books } from './source-placeholder'
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  title = 'BookStore';
-
   books = books
-  cartState: boolean = false   
-  cancelButton: boolean = false
+
+  isCartOpen: boolean = false   
+  isCancelButtonVisible: boolean = false
   public cart: any = {}
   price: number = 0
+
+  isEmptyObject(object: object) {
+    return (object && (Object.keys(object).length === 0))
+  }
 
   addToCart(book: any) {
     if (book.availableAmount > 0) {
@@ -23,7 +26,6 @@ export class AppComponent {
       } else {
         this.cart[book.name] = 1
       }
-      console.log(this.cart)
 
       this.price += book.price
 
@@ -38,7 +40,7 @@ export class AppComponent {
   }
 
   cartClicked(cartState: boolean) {
-    this.cartState = !cartState
+    this.isCartOpen = !cartState
   }
 
   removeFromCart(bookName: any) {
@@ -46,10 +48,9 @@ export class AppComponent {
     if (this.cart[bookName] <= 0) {
       delete this.cart[bookName]
     }
-    console.log(this.cart)
 
     for (let book of this.books){
-      if (book.name == bookName) {
+      if (book.name === bookName) {
         book.availableAmount++
         this.price -= book.price
       }
@@ -58,7 +59,7 @@ export class AppComponent {
 
   discountCheck(price: number) {
     if (price > 1000) {
-      return Math.round(price * 0.95)
+      return Math.round(price * 95) / 100
     } else {
       return price
     }
@@ -72,8 +73,8 @@ export class AppComponent {
     }
 
     window.alert('Your order placed. You have a minute to cancel your order.')
-    this.cancelButton = true
-    setTimeout(() => { this.cancelButton = false}, 10000)
+    this.isCancelButtonVisible = true
+    setTimeout(() => { this.isCancelButtonVisible = false}, 10000)
   }
 
   cancelOrder() {
@@ -84,7 +85,7 @@ export class AppComponent {
         this.removeFromCart(cartOrder)
       }
 
-      this.cancelButton = false;
+      this.isCancelButtonVisible = false;
     }
   }
 }

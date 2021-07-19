@@ -1,25 +1,26 @@
 <header>
   <div class="shop-name">BookStore</div>
-    <div class="shopping-cart" (click)="cartClicked(cartState)">Shopping cart</div>
-    <div class="dropdown" *ngIf="cartState">
+    <div class="shopping-cart" (click)="cartClicked(isCartOpen)">Shopping cart</div>
+    <div class="dropdown" *ngIf="isCartOpen">
       <div class="dropdown-container" *ngFor="let order of cart | keyvalue">
         <div class="item" title="Click to remove from cart" (click)="removeFromCart(order.key)">
           "{{order.key}}" : {{order.value}}
         </div>
       </div>
+      <div class="item" *ngIf="isEmptyObject(cart)">Cart is empty</div>
       <div class="total-price" *ngIf="price !== 0" (click)="checkout()">Checkout. Total price: {{discountCheck(price)}}</div>
     </div>
 </header>
 
-<div class="refresh-button" (click)="refreshBooks()"><img src="https://img.icons8.com/ios-glyphs/60/000000/refresh--v1.png"/></div>
-<div class="cancel-order" *ngIf="cancelButton" (click)="cancelOrder()">Cancel order</div>
+<div class="refresh-button" (click)="refreshBooks()"><img src="assets/images/refresh.png"/></div>
+<div class="cancel-order" *ngIf="isCancelButtonVisible" (click)="cancelOrder()">Cancel order</div>
 
 <div class="container">
   <div *ngFor="let book of books" class="book-for-sale" style="background-image: url(assets/images/{{book.coverPath}});">
       <div class="card-content">
           <h2 class="card-title">{{ book.name }}</h2>
           <p class="card-body">By {{ book.author }},
-          release {{ book.releaseDate }}, ISBN {{ book.isbn }}
+          release year {{ book.releaseDate }}, ISBN {{ book.isbn }}
           </p>
           <p><a href="#" class="button" (click)="addToCart(book)">Add to cart</a><span class="price">{{ book.availableAmount }}/{{ book.price }}rub</span></p>
       </div>
