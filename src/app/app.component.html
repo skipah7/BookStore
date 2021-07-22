@@ -3,7 +3,7 @@
     <div class="shopping-cart" (click)="cartClicked(isCartOpen)">Shopping cart</div>
     <div class="dropdown" *ngIf="isCartOpen">
       <div class="dropdown-container" *ngFor="let order of cart | keyvalue">
-        <div class="item" title="Click to remove from cart" (click)="removeFromCart(order.key)">
+        <div class="item" title="Click to remove from cart" (click)="removeFromCart(order.key, cart)">
           "{{order.key}}" : {{order.value}}
         </div>
       </div>
@@ -16,7 +16,8 @@
 <div class="cancel-order" *ngIf="isCancelButtonVisible" (click)="cancelOrder()">Cancel order</div>
 
 <div class="container">
-  <div *ngFor="let book of books" class="book-for-sale" style="background-image: url(assets/images/{{book.coverPath}});">
+  <ng-container *ngFor="let book of books">
+  <div class="book-for-sale" style="background-image: url(assets/images/{{book.coverPath}});" *ngIf="book.availableAmount > 0">
       <div class="card-content">
           <h2 class="card-title">{{ book.name }}</h2>
           <p class="card-body">By {{ book.author }},
@@ -25,4 +26,5 @@
           <p><a href="#" class="button" (click)="addToCart(book)">Add to cart</a><span class="price">{{ book.availableAmount }}/{{ book.price }}rub</span></p>
       </div>
   </div>  
+</ng-container>
 </div>

@@ -1,0 +1,23 @@
+[
+    {
+        "buyerName": "Petro",
+        "price": 6391.34,
+        "items": [
+            {
+                "isbn": "12321312321",
+                "name": "Dubrovski",
+                "amount": 5
+            },
+            {
+                "isbn": "23462523415",
+                "name": "Fathers and childrens",
+                "amount": 4
+            },
+            {
+                "isbn": "6543214365",
+                "name": "Idiot",
+                "amount": 8
+            }
+        ]
+    }
+]
