@@ -8,5 +8,8 @@ namespace BookStoreServer
         IEnumerable<Order> GetAll();
 
         void Save(Order order);
+
+        void PriceCalc(Order order);
+        int TotalBooks(Order order);
     }
 }

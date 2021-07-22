@@ -24,6 +24,34 @@ namespace BookStoreServer {
             _logger.LogInformation("Orders list was updated");
         }
 
+        public void PriceCalc(Order order)
+        {
+            double price = 0;
+            foreach (OrderItem item in order.items)
+            {
+                price += item.price;
+            }
+
+            if (price > 1000)
+            {
+                price = price * 0.95;
+                order.price = Math.Round(price);
+            }
+
+            order.price = price;
+        }
+
+        public int TotalBooks(Order order)
+        {
+            int totalBooks = 0;
+            foreach (OrderItem item in order.items)
+            {
+                totalBooks += item.amount;
+            }
+
+            return totalBooks;
+        }
+
         public void Dispose() {
             GC.Collect();
             GC.WaitForPendingFinalizers();

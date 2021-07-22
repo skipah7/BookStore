@@ -108,14 +108,16 @@ export class AppComponent {
       const orderedBooks: any = []
       for (let item in this.pendingOrder) {
         let isbn
+        let price 
 
         for (const book of this.books) {
           if (book.name === item) {
             isbn = book.isbn
+            price = book.price
           }
         }
 
-        orderedBooks.push({ isbn: isbn, name: item, amount: this.pendingOrder[item]})
+        orderedBooks.push({ isbn: isbn, name: item, amount: this.pendingOrder[item], price: price })
       }
 
       const confirmedOrder = {

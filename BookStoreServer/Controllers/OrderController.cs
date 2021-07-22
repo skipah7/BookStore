@@ -18,6 +18,7 @@ namespace BookStoreServer {
         
         [HttpPost]
         public void Save([FromBody] Order order) {
+            _orderService.PriceCalc(order);
             _orderService.Save(order);
         }
     }

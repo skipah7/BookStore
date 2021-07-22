@@ -5,7 +5,7 @@
     "releaseDate": 2011,
     "isbn": "978-1594485756",
     "coverPath": "psychopath-test.jpg",
-    "availableAmount": 5,
+    "availableAmount": 2,
     "price": 754
   },
   {
@@ -14,7 +14,7 @@
     "releaseDate": 2019,
     "isbn": "978-0374276805",
     "coverPath": "dead-astronauts.jpg",
-    "availableAmount": 1,
+    "availableAmount": 0,
     "price": 325
   },
   {
@@ -23,7 +23,7 @@
     "releaseDate": 2020,
     "isbn": "978-0062873644",
     "coverPath": "The-Everlasting.jpg",
-    "availableAmount": 6,
+    "availableAmount": 5,
     "price": 638
   },
   {

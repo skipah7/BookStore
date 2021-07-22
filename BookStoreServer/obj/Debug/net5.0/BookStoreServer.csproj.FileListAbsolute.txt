@@ -61,3 +61,4 @@ C:\Users\Skiper76\Desktop\Projects\JS\BookStore\BookStoreServer\obj\Debug\net5.0
 C:\Users\Skiper76\Desktop\Projects\JS\BookStore\BookStoreServer\obj\Debug\net5.0\BookStoreServer.pdb
 C:\Users\Skiper76\Desktop\Projects\JS\BookStore\BookStoreServer\obj\Debug\net5.0\BookStoreServer.genruntimeconfig.cache
 C:\Users\Skiper76\Desktop\Projects\JS\BookStore\BookStoreServer\bin\Debug\net5.0\Data\orders.json
+C:\Users\Skiper76\Desktop\Projects\JS\BookStore\BookStoreServer\bin\Debug\net5.0\nunit.framework.dll
