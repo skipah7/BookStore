@@ -1,6 +1,20 @@
 import { ThisReceiver } from '@angular/compiler';
 import { Component } from '@angular/core';
 
+interface book  {
+  name: string,
+  author: string,
+  releaseDate: number,
+  isbn: string,
+  coverPath: string,
+  availableAmount: number,
+  price: number
+}
+
+interface cart {
+  [key: string]: number
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,12 +25,12 @@ export class AppComponent {
 
   isCartOpen: boolean = false   
   isCancelButtonVisible: boolean = false
-  cart: any = {}
+  cart: cart = {}
   pendingOrder: any = {}
   price: number = 0
-  books: any
+  books: book[] = []
 
-  timer: any
+  timer: number = 0
 
   async ngOnInit() {
     await fetch('/book')
@@ -32,7 +46,7 @@ export class AppComponent {
     return (object && (Object.keys(object).length === 0))
   }
 
-  addToCart(book: any) {
+  addToCart(book: book) {
     if (book.availableAmount > 0) {
       book.availableAmount--
       if (book.name in this.cart) {
@@ -63,7 +77,7 @@ export class AppComponent {
     this.isCartOpen = !cartState
   }
 
-  removeFromCart(bookName: any, cart: any) {
+  removeFromCart(bookName: any, cart: cart) {
     cart[bookName]--
     if (cart[bookName] <= 0) {
       delete cart[bookName]
@@ -102,7 +116,7 @@ export class AppComponent {
 
     window.alert('Your order placed. You have a minute to cancel your order.')
     this.isCancelButtonVisible = true
-    this.timer = setTimeout(() => { 
+    this.timer = window.setTimeout(() => { 
       this.isCancelButtonVisible = false
 
       const orderedBooks: any = []

@@ -5,7 +5,7 @@
     "releaseDate": 2011,
     "isbn": "978-1594485756",
     "coverPath": "psychopath-test.jpg",
-    "availableAmount": 2,
+    "availableAmount": 1,
     "price": 754
   },
   {
@@ -23,7 +23,7 @@
     "releaseDate": 2020,
     "isbn": "978-0062873644",
     "coverPath": "The-Everlasting.jpg",
-    "availableAmount": 5,
+    "availableAmount": 1,
     "price": 638
   },
   {
@@ -32,7 +32,7 @@
     "releaseDate": 2015,
     "isbn": "037-4291373",
     "coverPath": "witches-of-america.jpg",
-    "availableAmount": 1,
+    "availableAmount": 0,
     "price": 728
   },
   {
@@ -41,7 +41,7 @@
     "releaseDate": 2014,
     "isbn": "978-1443430593",
     "coverPath": "the-silent-history.jpg",
-    "availableAmount": 3,
+    "availableAmount": 0,
     "price": 564
   },
   {
@@ -50,7 +50,7 @@
     "releaseDate": 2011,
     "isbn": "978-0-316-07423-0",
     "coverPath": "the-pale-king.jpg",
-    "availableAmount": 2,
+    "availableAmount": 0,
     "price": 954
   },
   {
@@ -59,7 +59,7 @@
     "releaseDate": 2014,
     "isbn": "978-0-374-10411-5",
     "coverPath": "Acceptance.jpg",
-    "availableAmount": 10,
+    "availableAmount": 7,
     "price": 352
   },
   {
